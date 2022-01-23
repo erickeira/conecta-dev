@@ -1,14 +1,33 @@
 import React from 'react';
-import Header from './components/header';
-import './style.css';
+import Header from './components/Header';
+import Feed from './components/Feed';
+import NavBar from './components/NavBar';
+
+//import './style.css';
+import { makeStyles } from '@material-ui/styles';
+
+const useStyles = makeStyles({
+    root:{
+        display: 'flex', 
+        flexDirection: 'column'
+    },
+    main:{
+        height: '100vh',
+        display: 'flex',
+        width: '1200px',
+        margin: '0 auto',
+    }
+})
 
 function Home(){
+    const classes = useStyles();
     return (
-        <div>
+        <div className={classes.root}>   
             <Header />
-            <main className="main"> 
-            <div className="navbar">Navbar</div>
-            <div className="feed">Feed</div>
+            <main className={classes.main}> 
+            <Feed/>
+            <NavBar/>
+            
                 
             </main>s
         </div>
